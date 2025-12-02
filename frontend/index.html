@@ -522,6 +522,41 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const fullname = e.target.fullname.value;
+      const email = e.target.email.value;
+      const message = e.target.message.value;
+
+      try {
+        const res = await fetch("https://portfolio-fb44.onrender.com/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ fullname, email, message })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          alert("Message sent successfully!");
+          e.target.reset();
+        } else {
+          alert("Failed to send message. Try again.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Unable to reach server. Please try later.");
+      }
+    });
+    </script>
+
+
 </body>
+
+
 
 </html>
