@@ -1,73 +1,92 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
+.github-btn, .deploy-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adjust spacing between icon and text */
+  text-decoration: none;
+  padding: 8px 16px;
+  background: #24292f;
+  color: white;
+  border-radius: 6px;
+}
 
+.github-btn:hover {
+  background: #2d363e;
+}
 
-/**
- * copyright 2022 @codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
 
 :root {
 
   /**
-   * colors
+   * Enhanced colors with modern palette
    */
 
   /* gradient */
 
   --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
-    hsl(0, 0%, 19%) 97%
+    135deg,
+    hsl(240, 1%, 15%) 0%,
+    hsl(240, 2%, 10%) 50%,
+    hsl(240, 3%, 8%) 100%
   );
   --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
-    hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
+    135deg,
+    hsla(240, 1%, 12%, 0.9) 0%,
+    hsla(240, 2%, 8%, 0.8) 50%,
+    hsla(240, 3%, 6%, 0.9) 100%
+  ), hsl(240, 2%, 8%);
   --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
-    hsla(36, 100%, 69%, 0) 50%
+    135deg,
+    hsl(45, 100%, 75%) 0%,
+    hsl(45, 95%, 70%) 50%,
+    hsla(45, 90%, 65%, 0.8) 100%
   );
   --bg-gradient-yellow-2: linear-gradient(
-    135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
-  ), hsl(240, 2%, 13%);
+    135deg,
+    hsla(45, 100%, 75%, 0.9) 0%,
+    hsla(45, 95%, 70%, 0.8) 50%,
+    hsla(45, 90%, 65%, 0.7) 100%
+  ), hsl(240, 2%, 8%);
   --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
-    hsla(0, 0%, 25%, 0) 50%
+    135deg,
+    hsl(0, 0%, 20%) 0%,
+    hsla(0, 0%, 18%, 0.8) 50%,
+    hsla(0, 0%, 15%, 0.6) 100%
   );
   --text-gradient-yellow: linear-gradient(
-    to right, 
-    hsl(45, 100%, 72%), 
-    hsl(35, 100%, 68%)
+    135deg,
+    hsl(45, 100%, 76%),
+    hsl(45, 95%, 72%),
+    hsl(45, 90%, 68%)
+  );
+  --text-gradient-rainbow: linear-gradient(
+    135deg,
+    hsl(45, 100%, 76%) 0%,
+    hsl(280, 100%, 76%) 25%,
+    hsl(200, 100%, 76%) 50%,
+    hsl(120, 100%, 76%) 75%,
+    hsl(45, 100%, 76%) 100%
   );
 
-  /* solid */
+  /* solid - enhanced */
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
+  --jet: hsl(0, 0%, 18%);
+  --onyx: hsl(240, 1%, 13%);
+  --eerie-black-1: hsl(240, 2%, 9%);
+  --eerie-black-2: hsl(240, 2%, 7%);
+  --smoky-black: hsl(0, 0%, 4%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --orange-yellow-crayola: hsl(45, 100%, 76%);
+  --vegas-gold: hsl(45, 60%, 62%);
+  --light-gray: hsl(0, 0%, 88%);
+  --light-gray-70: hsla(0, 0%, 88%, 0.8);
+  --bittersweet-shimmer: hsl(0, 45%, 55%);
+
+  /* Additional modern colors */
+  --neon-cyan: hsl(180, 100%, 60%);
+  --electric-purple: hsl(270, 100%, 70%);
+  --hot-pink: hsl(320, 100%, 70%);
+  --lime-green: hsl(120, 100%, 60%);
 
   /**
    * typography
